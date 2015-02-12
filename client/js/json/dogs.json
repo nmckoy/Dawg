@@ -1,0 +1,17 @@
+[{
+  "_comments": "dogs will have their own particular park",
+
+
+  "Kingman Park": {
+    "name": "balto",
+    "companion": "Jessie",
+    "breed": "wolf/dog",
+    "arrival": "11:42 PM"
+  },
+  "hyattsvile dog park": {
+    "name": "Luna",
+    "companion": "Nick",
+    "breed": "Pitbull",
+    "arrival": "1:54pm"
+  }
+}]
