@@ -9,19 +9,23 @@
     
     var getParks = function() {
       $log.info(Service.test);
-      $http.get("/js/json/parks.json")
-        .success(function(data){
-          $log.info("data: " + angular.toJson(data));
-          $scope.parks = data;
-        })
-        .error(function(data, status) {
-          $log.error = "couldnt get posts with data: " + data +
-            "and status: " + status;
-          $scope.error = "couldnt get the posts";
-        });
+      // $http.get("/js/json/parks.json")
+      Service.getParks()
+        .then(
+          function(data){ //success
+            // var s = JSON.parse(data);
+            $log.info("data: " + JSON.parse(data));
+            // $scope.parks = JSON.parse(data);
+            // $log.info("json? " + $scope.parks);
+          }, 
+          function(reason) { //error
+            $log.error = "couldnt get parks with data: " + reason;
+            $scope.error = "couldnt get the parks";
+          }
+        );
     };
     // we should get all parks first
-    getParks();
+    getParks(); 
     
 
   };
@@ -31,18 +35,22 @@
 
     var getParks = function() {
       $log.info("getParks service method being called");
-      $http.get("/js/json/parks.json")
-        .then(function(response) {
-          return response.data;
-        });
+      return $http.get("/js/json/parks.json")
+        .then(
+          function(response) {
+            return response.data;
+          }
+        );
     };
 
     var getDogs = function() {
       $log.info("getDogs service method being called");
       return $http.get("/js/json/dogs.json")
-        .then(function(response) {
-          return response.data;
-        });
+        .then(
+          function(response) {
+            return response.data;
+          }
+        );
     };
 
     return {

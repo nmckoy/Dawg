@@ -3,7 +3,7 @@
   <head>
     <title>BarkPark</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
     <link rel="stylesheet" href="/css/dev/custom.css">
   </head>
@@ -23,9 +23,13 @@
         <div class="span3">
           <ul class="nav nav-list well">
             <li class="nav-header">Local Users</li>
+            
+            <!--spitting out barkpark stuff-->
             <li ng-repeat="park in parks">
               <p class="muted" ng-bind="park"></p>
             </li>
+            
+            
           </ul>
         </div>
         <div class="span9">
@@ -33,7 +37,7 @@
             <thead>
               <tr>
                 <th class="span2">Name</th>
-                <th class="span7">Text</th>
+                <th class="span7">City</th>
               </tr>
             </thead>
             <tbody>
@@ -56,6 +60,7 @@
       </div>
     </div>
     <!--<script data-require="angular.js@1.3.x" src="https://code.angularjs.org/1.3.13/angular.js" data-semver="1.3.13"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script src="/js/angular.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/js/jquery.min.js"></script>
